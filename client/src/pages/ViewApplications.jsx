@@ -95,7 +95,7 @@ const ViewApplications = () => {
                     {index + 1}
                   </td>
                   <td className='py-2 px-4 border-b text-center flex items-center'>
-                    <img className='w-10 h-10 rounded-full mr-3 max-sm:hidden' src={applicant.userId.imgSrc} alt="" />
+                    <img className='w-10 h-10 rounded-full mr-3 max-sm:hidden' src={applicant.userId.image} alt="" />
                     <span>{applicant.userId.name}</span>
                   </td>
                   <td className='py-2 px-4 border-b max-sm:hidden'>{applicant.jobId.title}</td>
@@ -107,7 +107,7 @@ const ViewApplications = () => {
 
                   </td>
                   <td className='py-2 px-4 border-b relative'>
-                    {applicant.staus === 'Pending'
+                    {applicant.status === 'pending'
                     ?
                     <div className='relative inline-block text-left group'>
                       <button className='text-gray-500 action-button'>...</button>
@@ -116,7 +116,13 @@ const ViewApplications = () => {
                         <button onClick={()=> chnageJobapplivationStatus(applicant._id,'Rejected')} className='block w-full text-left px-4 py-2 text-red-500 hover:gray-100'><b>Reject</b></button>
                       </div>
                     </div>
-                    : <div>{applicant.status}</div>
+                    : <div className={`${
+                        applicant.status === "Accepted"
+                          ? "bg-green-100"
+                          : applicant.status === "Rejected"
+                          ? "bg-red-100"
+                          : "bg-blue-100"
+                      } px-4 py-1.5 rounded`}>{applicant.status}</div>
                   }
                     
                   </td>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <style>
+    .actor { stroke:#333; stroke-width:2; fill:none }
+    .actor-label { font: 16px Arial, sans-serif; fill:#111 }
+    .usecase { fill:#eaf2ff; stroke:#1967d2; stroke-width:2 }
+    .usecase-label { font:14px Arial, sans-serif; fill:#042a66 }
+    .boundary { fill:none; stroke:#666; stroke-width:2; stroke-dasharray:0 }
+    .note { font:12px Arial, sans-serif; fill:#333 }
+    .line { stroke:#333; stroke-width:1.5 }
+    .dash { stroke-dasharray:6 6 }
+  </style>
+
+  <!-- System boundary -->
+  <rect x="220" y="40" width="1060" height="820" rx="8" ry="8" class="boundary" />
+  <text x="780" y="70" font-family="Arial" font-size="18" text-anchor="middle" fill="#111">JobPortal System</text>
+
+  <!-- Actors (left) -->
+  <!-- Guest -->
+  <g id="actor-guest" transform="translate(60,120)">
+    <circle cx="0" cy="0" r="16" class="actor" />
+    <line x1="0" y1="16" x2="0" y2="56" class="actor" />
+    <line x1="0" y1="30" x2="-18" y2="18" class="actor" />
+    <line x1="0" y1="30" x2="18" y2="18" class="actor" />
+    <line x1="0" y1="56" x2="-18" y2="86" class="actor" />
+    <line x1="0" y1="56" x2="18" y2="86" class="actor" />
+    <text x="-10" y="110" class="actor-label">Guest</text>
+  </g>
+
+  <!-- Candidate -->
+  <g id="actor-candidate" transform="translate(60,300)">
+    <circle cx="0" cy="0" r="16" class="actor" />
+    <line x1="0" y1="16" x2="0" y2="56" class="actor" />
+    <line x1="0" y1="30" x2="-18" y2="18" class="actor" />
+    <line x1="0" y1="30" x2="18" y2="18" class="actor" />
+    <line x1="0" y1="56" x2="-18" y2="86" class="actor" />
+    <line x1="0" y1="56" x2="18" y2="86" class="actor" />
+    <text x="-18" y="110" class="actor-label">Candidate</text>
+  </g>
+
+  <!-- Employer -->
+  <g id="actor-employer" transform="translate(60,520)">
+    <circle cx="0" cy="0" r="16" class="actor" />
+    <line x1="0" y1="16" x2="0" y2="56" class="actor" />
+    <line x1="0" y1="30" x2="-18" y2="18" class="actor" />
+    <line x1="0" y1="30" x2="18" y2="18" class="actor" />
+    <line x1="0" y1="56" x2="-18" y2="86" class="actor" />
+    <line x1="0" y1="56" x2="18" y2="86" class="actor" />
+    <text x="-18" y="110" class="actor-label">Employer</text>
+  </g>
+
+  <!-- Admin -->
+  <g id="actor-admin" transform="translate(60,720)">
+    <circle cx="0" cy="0" r="16" class="actor" />
+    <line x1="0" y1="16" x2="0" y2="56" class="actor" />
+    <line x1="0" y1="30" x2="-18" y2="18" class="actor" />
+    <line x1="0" y1="30" x2="18" y2="18" class="actor" />
+    <line x1="0" y1="56" x2="-18" y2="86" class="actor" />
+    <line x1="0" y1="56" x2="18" y2="86" class="actor" />
+    <text x="-10" y="110" class="actor-label">Admin</text>
+  </g>
+
+  <!-- Use cases (inside boundary) arranged in columns -->
+  <!-- Row 1 -->
+  <ellipse cx="520" cy="140" rx="140" ry="36" class="usecase" />
+  <text x="520" y="145" text-anchor="middle" class="usecase-label">Register / Login</text>
+
+  <ellipse cx="880" cy="140" rx="140" ry="36" class="usecase" />
+  <text x="880" y="145" text-anchor="middle" class="usecase-label">Browse / Search Jobs</text>
+
+  <!-- Row 2 -->
+  <ellipse cx="520" cy="260" rx="140" ry="36" class="usecase" />
+  <text x="520" y="265" text-anchor="middle" class="usecase-label">View Job Details</text>
+
+  <ellipse cx="880" cy="260" rx="170" ry="36" class="usecase" />
+  <text x="880" y="265" text-anchor="middle" class="usecase-label">Apply to Job (attach resume)</text>
+
+  <!-- Row 3 -->
+  <ellipse cx="520" cy="380" rx="160" ry="36" class="usecase" />
+  <text x="520" y="385" text-anchor="middle" class="usecase-label">Manage Profile / Upload Resume</text>
+
+  <ellipse cx="880" cy="380" rx="150" ry="36" class="usecase" />
+  <text x="880" y="385" text-anchor="middle" class="usecase-label">View My Applications</text>
+
+  <!-- Row 4 -->
+  <ellipse cx="520" cy="510" rx="150" ry="36" class="usecase" />
+  <text x="520" y="515" text-anchor="middle" class="usecase-label">Create / Edit Job Post</text>
+
+  <ellipse cx="880" cy="510" rx="160" ry="36" class="usecase" />
+  <text x="880" y="515" text-anchor="middle" class="usecase-label">View Applicants / Change Status</text>
+
+  <!-- Row 5 -->
+  <ellipse cx="700" cy="640" rx="170" ry="36" class="usecase" />
+  <text x="700" y="645" text-anchor="middle" class="usecase-label">Admin: Manage Users / Jobs / Reports</text>
+
+  <!-- Connections: Guest -->
+  <line x1="100" y1="120" x2="380" y2="140" class="line" /> <!-- Guest -> Register/Login -->
+  <line x1="100" y1="140" x2="760" y2="140" class="line" /> <!-- Guest -> Browse/Search -->
+  <line x1="100" y1="160" x2="380" y2="260" class="line" /> <!-- Guest -> View Job Details -->
+
+  <!-- Connections: Candidate -->
+  <line x1="100" y1="300" x2="380" y2="260" class="line" /> <!-- Candidate -> View Job Details -->
+  <line x1="100" y1="320" x2="760" y2="260" class="line" /> <!-- Candidate -> Apply -->
+  <line x1="100" y1="340" x2="380" y2="380" class="line" /> <!-- Candidate -> Manage Profile -->
+  <line x1="100" y1="360" x2="760" y2="380" class="line" /> <!-- Candidate -> View My Applications -->
+
+  <!-- Connections: Employer -->
+  <line x1="100" y1="520" x2="380" y2="510" class="line" /> <!-- Employer -> Create/Edit Job -->
+  <line x1="100" y1="540" x2="760" y2="510" class="line" /> <!-- Employer -> View Applicants -->
+
+  <!-- Connections: Admin -->
+  <line x1="100" y1="720" x2="700" y2="640" class="line" /> <!-- Admin -> Manage -->
+
+  <!-- Include relationship examples (dashed) -->
+  <line x1="380" y1="140" x2="430" y2="140" class="line dash" />
+  <text x="456" y="138" class="note">includes</text>
+  <line x1="760" y1="260" x2="840" y2="260" class="line dash" />
+  <text x="860" y="258" class="note">includes</text>
+
+  <!-- Notes -->
+  <rect x="920" y="700" width="340" height="120" rx="8" ry="8" fill="#fff8e1" stroke="#cfa10a" />
+  <text x="940" y="725" class="note">Notes:</text>
+  <text x="940" y="745" class="note">- Protected actions require JWT authentication</text>
+  <text x="940" y="765" class="note">- Employer ownership checked for job edits</text>
+  <text x="940" y="785" class="note">- Duplicate application prevented (userId + jobId unique)</text>
+
+  <!-- Footer -->
+  <text x="780" y="880" font-size="12" text-anchor="middle" fill="#666">Generated: Job Portal Use-Case Diagram</text>
+</svg>
